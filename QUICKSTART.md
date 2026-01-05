@@ -37,14 +37,14 @@ Create `.env.local` in project root:
 ```env
 # Email (Gmail)
 EMAIL_USER=awaisniaz768@gmail.com
-EMAIL_PASSWORD=xxxx xxxx xxxx xxxx
+EMAIL_PASSWORD=
 
 # MongoDB Atlas
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/portfolio
+MONGODB_URI=mongodb+srv:
 
 # Clerk Auth
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_xxxxx
-CLERK_SECRET_KEY=sk_test_xxxxx
+CLERK_SECRET_KEY=
 
 # Clerk Routes (keep as is)
 NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
@@ -132,4 +132,4 @@ npm run dev
 **Need Help?**
 
 - 📖 Full docs: [SETUP.md](./SETUP.md)
-- 📧 Email: awaisniaz768@gmail.com
+- 📧 Email: awaisniaz720@gmail.com

@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Awais Niaz" }],
   creator: "Awais Niaz",
   icons: {
-    icon: '/alquran.png',
-    shortcut: '/alquran.png',
-    apple: '/alquran.png',
+    icon: '/portfolio.jpg',
+    shortcut: '/portfolio.jpg',
+    apple: '/portfolio.jpg',
   },
   openGraph: {
     type: "website",
