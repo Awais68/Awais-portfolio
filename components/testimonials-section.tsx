@@ -81,49 +81,51 @@ export function TestimonialsSection() {
                     </p>
                 </motion.div>
 
-                {/* Desktop Grid */}
-                <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* Mobile-First Responsive Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                     {testimonials.map((testimonial, index) => (
                         <motion.div
                             key={testimonial.name}
-                            initial={{ y: 50, opacity: 0 }}
+                            initial={{ y: 30, opacity: 0 }}
                             whileInView={{ y: 0, opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1, duration: 0.5 }}
                         >
                             <Card className="glass-effect h-full hover:shadow-2xl transition-all duration-300 border-0 group">
-                                <CardContent className="p-6">
+                                <CardContent className="p-4 sm:p-6">
                                     {/* Quote Icon */}
-                                    <Quote className="w-10 h-10 text-blue-500/20 dark:text-blue-400/20 mb-4" />
+                                    <Quote className="w-8 h-8 sm:w-10 sm:h-10 text-blue-500/20 dark:text-blue-400/20 mb-3 sm:mb-4" />
 
                                     {/* Rating */}
-                                    <div className="flex gap-1 mb-4">
+                                    <div className="flex gap-1 mb-3 sm:mb-4">
                                         {Array.from({ length: testimonial.rating }).map((_, i) => (
-                                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                                            <Star key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-yellow-400 text-yellow-400" />
                                         ))}
                                     </div>
 
                                     {/* Quote */}
-                                    <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed italic">
+                                    <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed italic">
                                         &quot;{testimonial.quote}&quot;
-                                    </p>                                    {/* Client Info */}
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                                    </p>
+
+                                    {/* Client Info */}
+                                    <div className="flex items-center gap-3 sm:gap-4">
+                                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center text-white font-bold text-sm sm:text-lg shadow-lg flex-shrink-0">
                                             {testimonial.name.split(' ').map(n => n[0]).join('')}
                                         </div>
-                                        <div className="flex-1">
-                                            <h4 className="font-semibold text-gray-900 dark:text-gray-100">
+                                        <div className="flex-1 min-w-0">
+                                            <h4 className="font-semibold text-sm sm:text-base text-gray-900 dark:text-gray-100 truncate">
                                                 {testimonial.name}
                                             </h4>
-                                            <p className="text-sm text-gray-600 dark:text-gray-400">
+                                            <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
                                                 {testimonial.title}
                                             </p>
                                         </div>
                                     </div>
 
                                     {/* Platform Badge */}
-                                    <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-800">
-                                        <Badge className={`${testimonial.platformColor} text-white border-0`}>
+                                    <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-gray-200 dark:border-gray-800">
+                                        <Badge className={`${testimonial.platformColor} text-white border-0 text-xs sm:text-sm`}>
                                             {testimonial.platform}
                                         </Badge>
                                     </div>
@@ -131,56 +133,6 @@ export function TestimonialsSection() {
                             </Card>
                         </motion.div>
                     ))}
-                </div>
-
-                {/* Mobile Carousel */}
-                <div className="md:hidden overflow-x-auto pb-6 -mx-4 px-4">
-                    <div className="flex gap-4 w-max">
-                        {testimonials.map((testimonial, index) => (
-                            <motion.div
-                                key={testimonial.name}
-                                initial={{ x: 50, opacity: 0 }}
-                                whileInView={{ x: 0, opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1, duration: 0.5 }}
-                                className="w-[320px]"
-                            >
-                                <Card className="glass-effect h-full shadow-lg border-0">
-                                    <CardContent className="p-6">
-                                        <Quote className="w-8 h-8 text-blue-500/20 dark:text-blue-400/20 mb-3" />
-
-                                        <div className="flex gap-1 mb-3">
-                                            {Array.from({ length: testimonial.rating }).map((_, i) => (
-                                                <Star key={i} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-                                            ))}
-                                        </div>
-
-                                        <p className="text-sm text-gray-700 dark:text-gray-300 mb-4 leading-relaxed italic">
-                                            &quot;{testimonial.quote}&quot;
-                                        </p>                                        <div className="flex items-center gap-3">
-                                            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center text-white font-bold text-sm shadow-lg">
-                                                {testimonial.name.split(' ').map(n => n[0]).join('')}
-                                            </div>
-                                            <div className="flex-1">
-                                                <h4 className="font-semibold text-sm text-gray-900 dark:text-gray-100">
-                                                    {testimonial.name}
-                                                </h4>
-                                                <p className="text-xs text-gray-600 dark:text-gray-400">
-                                                    {testimonial.title}
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-800">
-                                            <Badge className={`${testimonial.platformColor} text-white border-0 text-xs`}>
-                                                {testimonial.platform}
-                                            </Badge>
-                                        </div>
-                                    </CardContent>
-                                </Card>
-                            </motion.div>
-                        ))}
-                    </div>
                 </div>
             </div>
         </section>
