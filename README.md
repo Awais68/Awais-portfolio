@@ -1,11 +1,14 @@
-# Modern Portfolio Website
+# 🚀 Awais Niaz Portfolio - Full Stack with Admin Panel
 
-A professional Next.js 14 portfolio website with dark/light theme toggle and smooth Framer Motion animations, replicating the structure of successful portfolios while maintaining modern design standards.
+A modern, full-stack portfolio website with admin panel for managing projects dynamically. Built with Next.js 14, MongoDB, and Clerk authentication.
 
 ## ✨ Features
 
 - 🎨 **Modern Design**: Clean, professional layout with glassmorphism effects
 - 🌓 **Dark/Light Mode**: Seamless theme switching with animated toggle
+- 🔐 **Admin Panel**: Secure admin dashboard for managing projects
+- 📊 **MongoDB Integration**: Dynamic project management with database
+- 📧 **Email Contact Form**: Functional contact form with nodemailer
 - ⚡ **Performance Optimized**: Lighthouse score 90+
 - 📱 **Fully Responsive**: Mobile-first design (iPhone SE to 4K desktop)
 - 🎭 **Smooth Animations**: Framer Motion animations throughout
@@ -15,51 +18,115 @@ A professional Next.js 14 portfolio website with dark/light theme toggle and smo
 
 ## 🚀 Tech Stack
 
-- **Framework**: Next.js 14 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Components**: shadcn/ui
-- **Animations**: Framer Motion
-- **Icons**: Lucide React
-- **Theme**: next-themes
+**Frontend:**
+
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- shadcn/ui components
+- Framer Motion
+- Lucide React icons
+- next-themes
+
+**Backend:**
+
+- Next.js API Routes
+- MongoDB with Mongoose
+- Nodemailer
+
+**Authentication:**
+
+- Clerk
 
 ## 📋 Sections
 
 1. **Hero Section** - Full viewport height with animated profile photo
-2. **Work Process** - 4-step workflow visualization
-3. **Portfolio** - Showcase of 4 featured projects with metrics
-4. **Achievements** - Animated counters showing impact metrics
-5. **Testimonials** - Client reviews carousel
-6. **Contact** - Contact information and form
+2. **About Me** - Professional bio with colorful skill icons
+3. **Work Process** - 4-step workflow visualization
+4. **Portfolio** - Dynamic projects fetched from MongoDB
+5. **Achievements** - Animated counters showing impact metrics
+6. **Testimonials** - Client reviews carousel
+7. **Contact** - Functional contact form with email integration
 
-## 🎯 Getting Started
+## 🎯 Quick Start
 
 ### Prerequisites
 
-- Node.js 18+ and npm
+- Node.js 18+
+- MongoDB Atlas account (free tier)
+- Clerk account (free tier)
+- Gmail account (for email)
 
 ### Installation
 
-1. Clone the repository
+1. **Clone the repository**
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Awais68/Awais-portfolio.git
 cd awais-portfolio
 ```
 
-2. Install dependencies
+2. **Install dependencies**
 
 ```bash
 npm install
 ```
 
-3. Run the development server
+3. **Set up environment variables**
+
+Create `.env.local` file (see [Complete Setup Guide](./SETUP.md) for detailed instructions):
+
+```env
+# Email
+EMAIL_USER=awaisniaz768@gmail.com
+EMAIL_PASSWORD=your-gmail-app-password
+
+# MongoDB
+MONGODB_URI=your-mongodb-connection-string
+
+# Clerk Authentication
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your-clerk-publishable-key
+CLERK_SECRET_KEY=your-clerk-secret-key
+```
+
+4. **Run the development server**
 
 ```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+5. **Open** [http://localhost:3000](http://localhost:3000)
+
+## 📚 Complete Setup Guide
+
+For detailed setup instructions including:
+
+- Gmail App Password setup
+- MongoDB Atlas configuration
+- Clerk authentication setup
+- Admin panel usage
+
+**👉 See [SETUP.md](./SETUP.md) for complete guide**
+
+## 🎮 Admin Panel
+
+### Access Admin Panel
+
+1. Navigate to `/sign-in`
+2. Create your admin account (first user)
+3. Access admin dashboard at `/admin`
+
+### Add Projects Dynamically
+
+The admin panel allows you to:
+
+- ✅ Add new projects with images
+- ✅ Edit existing projects
+- ✅ Choose color gradients
+- ✅ Add tech stack badges
+- ✅ Projects appear instantly on homepage
+
+All projects are stored in MongoDB and fetched dynamically.
 
 ## 🔧 Customization Guide
 
@@ -67,21 +134,19 @@ npm run dev
 
 **Hero Section** (`components/hero-section.tsx`):
 
-- Line 57: Update name and title
-- Line 61: Add your headline and user impact number
-- Line 68: Update subtext with your location and specialty
-- Line 49-51: Replace placeholder profile photo
+- Update name, title, and bio
+- Replace profile photo in `/public/images/`
+
+**About Section** (`components/about-section.tsx`):
+
+- Update bio text
+- Add/remove skills
+- Modify experience stats
 
 **Contact Section** (`components/contact-section.tsx`):
 
-- Lines 11-26: Update location, WhatsApp number, and email
-- Lines 28-51: Update social media links (GitHub, LinkedIn, Fiverr, Upwork)
-
-### 2. Projects
-
-**Projects Section** (`components/projects-section.tsx`):
-
-- Lines 8-57: Replace with your actual projects
+- Update contact information
+- Update social media links
 - For each project update:
   - `title`: Project name
   - `description`: Brief description

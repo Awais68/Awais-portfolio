@@ -1,4 +1,5 @@
 import { HeroSection } from "@/components/hero-section";
+import { AboutSection } from "@/components/about-section";
 import { WorkProcessSection } from "@/components/work-process-section";
 import { ProjectsSection } from "@/components/projects-section";
 import { AchievementsSection } from "@/components/achievements-section";
@@ -12,6 +13,7 @@ export default function Home() {
     <div className="relative">
       <ThemeToggle />
       <HeroSection />
+      <AboutSection />
       <WorkProcessSection />
       <ProjectsSection />
       <AchievementsSection />

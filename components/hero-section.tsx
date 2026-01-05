@@ -60,18 +60,20 @@ export function HeroSection() {
                                 repeat: Infinity,
                                 ease: "easeInOut"
                             }}
-                            className="relative w-[250px] h-[250px] sm:w-[300px] sm:h-[300px]"
+                            className="relative w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] "
                         >
                             <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full blur-xl opacity-50" />
                             <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl">
-                                <Image
-                                    src="/images/portfolio.jpg"
-                                    alt="Awais Niaz"
-                                    fill
-                                    className="object-cover"
-                                    priority
-                                    sizes="(max-width: 640px) 250px, 300px"
-                                />
+                                <div className="relative w-full h-full">
+                                    <Image
+                                        src="/images/portfolio.jpg"
+                                        alt="Awais Niaz"
+                                        fill
+                                        className="object-cover object-top"
+                                        priority
+                                        sizes="(max-width: 640px) 250px, 300px"
+                                    />
+                                </div>
                             </div>
                         </motion.div>
                     </motion.div>
