@@ -121,8 +121,7 @@ const initialProjects = [
     liveUrl: "https://blue-sea-chat-application.vercel.app/",
     githubUrl: "https://github.com/Awais68",
     gradient: "from-sky-500 to-blue-500",
-    image:
-      "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=800&q=80",
+    image: "/images/bluechat.png",
   },
   {
     title: "AI Chatbot (Chainlit)",
