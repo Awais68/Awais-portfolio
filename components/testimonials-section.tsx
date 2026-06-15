@@ -114,9 +114,9 @@ export function TestimonialsSection() {
                                             {testimonial.name.split(' ').map(n => n[0]).join('')}
                                         </div>
                                         <div className="flex-1 min-w-0">
-                                            <h4 className="font-semibold text-sm sm:text-base text-gray-900 dark:text-gray-100 truncate">
+                                            <h3 className="font-semibold text-sm sm:text-base text-gray-900 dark:text-gray-100 truncate">
                                                 {testimonial.name}
-                                            </h4>
+                                            </h3>
                                             <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
                                                 {testimonial.title}
                                             </p>

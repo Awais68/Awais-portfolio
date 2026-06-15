@@ -1,3 +1,4 @@
+import { ClerkProvider } from "@clerk/nextjs"
 import { currentUser } from "@clerk/nextjs/server"
 import { redirect } from "next/navigation"
 
@@ -12,5 +13,7 @@ export default async function AdminLayout({
         redirect("/sign-in")
     }
 
-    return <>{children}</>
+    // ClerkProvider is scoped to /admin (and the auth routes) so its client JS
+    // and third-party cookies never load on the public homepage.
+    return <ClerkProvider>{children}</ClerkProvider>
 }

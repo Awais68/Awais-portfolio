@@ -89,3 +89,103 @@
 .gradient-text {
   @apply bg-gradient-to-r from-blue-500 to-emerald-500 bg-clip-text text-transparent;
 }
+
+/* ---------------------------------------------------------------------------
+   Hero animations — pure CSS so they never gate first paint (LCP).
+   The profile image renders fully opaque immediately; only transform-based
+   float animations run, which do not block painting.
+--------------------------------------------------------------------------- */
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes hero-scroll-dot {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(12px);
+  }
+}
+
+@keyframes hero-blob-a {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(90deg);
+  }
+}
+
+@keyframes hero-blob-b {
+  0%,
+  100% {
+    transform: scale(1.2) rotate(90deg);
+  }
+  50% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.hero-fade-up {
+  opacity: 0;
+  animation: hero-fade-up 0.5s ease-out forwards;
+}
+
+.hero-float {
+  animation: hero-float 4s ease-in-out infinite;
+}
+
+.hero-float-slow {
+  animation: hero-float 2s ease-in-out infinite;
+}
+
+.hero-scroll-dot {
+  animation: hero-scroll-dot 2s ease-in-out infinite;
+}
+
+.hero-blob-a {
+  animation: hero-blob-a 20s linear infinite;
+}
+
+.hero-blob-b {
+  animation: hero-blob-b 20s linear infinite;
+}
+
+/* Prevent layout shift (CLS) on animated achievement counters: reserve a
+   stable glyph width so digits don't reflow as the number ticks up. */
+.counter-stable {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-fade-up,
+  .hero-float,
+  .hero-float-slow,
+  .hero-scroll-dot,
+  .hero-blob-a,
+  .hero-blob-b {
+    animation: none;
+    opacity: 1;
+  }
+}

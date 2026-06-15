@@ -86,7 +86,7 @@ function AnimatedCounter({
         return unsubscribe
     }, [springValue, suffix, format])
 
-    return <span ref={ref}>0{suffix}</span>
+    return <span ref={ref} className="counter-stable inline-block">0{suffix}</span>
 }
 
 export function AchievementsSection() {

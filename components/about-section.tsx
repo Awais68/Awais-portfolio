@@ -92,6 +92,7 @@ export function AboutSection() {
                                                 alt="Awais Niaz"
                                                 fill
                                                 className="object-cover object-top"
+                                                sizes="128px"
                                             />
                                         </div>
                                     </div>

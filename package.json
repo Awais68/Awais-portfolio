@@ -2,6 +2,14 @@
   "name": "awais-portfolio",
   "version": "0.1.0",
   "private": true,
+  "browserslist": [
+    "chrome >= 64",
+    "edge >= 79",
+    "firefox >= 67",
+    "safari >= 12",
+    "not dead",
+    "not op_mini all"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",

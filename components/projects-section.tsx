@@ -139,7 +139,7 @@ export function ProjectsSection() {
                                             className="flex-1 rounded-full group/btn"
                                             asChild
                                         >
-                                            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                                            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`View live demo of ${project.title}`}>
                                                 <ExternalLink className="w-4 h-4 mr-2 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                                                 Live Demo
                                             </a>
@@ -150,7 +150,7 @@ export function ProjectsSection() {
                                             className="flex-1 rounded-full"
                                             asChild
                                         >
-                                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.title} source code on GitHub`}>
                                                 <Github className="w-4 h-4 mr-2" />
                                                 GitHub
                                             </a>
